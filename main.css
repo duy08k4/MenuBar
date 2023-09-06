@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mainColor: #3e3f46;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.mainPage {
+    height: 100%;
+    width: 100%;
+    background-color: var(--mainColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuBar {
+    height: fit-content;
+    width: fit-content;
+    box-shadow: 0 0 10px black,
+        inset 5px 5px 10px #68696d,
+        inset -5px -5px 10px #17171b;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menuBar .menuButton {
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 100px;
+    transition: .5s;
+}
+
+.menuBar .menuButton::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    height: 10px;
+    width: 100%;
+    background-color: transparent;
+    transition: .5s;
+}
+
+.menuBar .menuButton.active {
+    position: relative;
+    background-color: #2b2d33;
+    box-shadow: inset 5px 5px 10px #0b0b0e,
+    inset -5px -5px 10px #68696d;
+}
+
+.menuBar .menuButton.active::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    height: 10px;
+    width: 100%;
+    background-color: lime;
+}
+
+.menuBar .menuButton.active .fas {
+    color: lime;
+    filter: drop-shadow(0 0 20px lime);
+}
+
+.menuBar .menuButton.active:hover .fas {
+    color: lime;
+}
+
+.menuBar .menuButton:nth-child(1) {
+    border-radius: 10px 0 0 10px;
+}
+
+.menuBar .menuButton:nth-last-child() {
+    border-radius: 0 10px 10px 0;
+}
+
+.menuBar .menuButton:hover {
+    cursor: grab;
+    background-color: #2b2d33;
+    box-shadow: inset 5px 5px 10px #0b0b0e,
+        inset -5px -5px 10px #68696d;
+}
+
+.menuBar .menuButton:active {
+    cursor: grabbing;
+    transform: scale(.8);
+}
+
+.menuBar .menuButton:hover .fas {
+    color: lime;
+    filter: drop-shadow(0 0 20px lime);
+}
+
+.menuBar .menuButton .fas {
+    font-size: 46px;
+    font-weight: bolder;
+    transition: .5s;
+}

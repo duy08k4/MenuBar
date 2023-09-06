@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <title>Menu Bar</title>
+</head>
+
+<body>
+    <div class="mainPage">
+        <div class="menuBar">
+            <div class="menuButton">
+                <i class="fas fa-home"></i>
+            </div>
+
+            <div class="menuButton">
+                <i class="fas fa-user"></i>
+            </div>
+
+            <div class="menuButton">
+                <i class="fas fa-phone"></i>
+            </div>
+
+            <div class="menuButton">
+                <i class="fas fa-cog"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".menuButton").forEach(val => {
+            val.addEventListener("click", () => {
+                let status = false;
+
+                if (status === false) {
+                    status = true
+                    document.querySelectorAll(".menuButton").forEach(ele => {
+                        ele.classList.remove("active")
+                    })
+
+                    val.classList.add("active")
+                } else {
+                    status = false
+                    val.classList.remove("active")
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
